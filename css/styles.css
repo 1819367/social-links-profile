@@ -1,0 +1,161 @@
+/* ================= Global Styles ================== */
+/* Primary color from branding guidelines */
+:root {
+  --lime-green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --dark-charcoal-700: hsl(0, 0%, 20%);
+  --deep-charcoal-800: hsl(0, 0%, 12%);
+  --almost-black-900: hsl(0, 0%, 8%);
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* ================= Layout ================== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+h1, p {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--white);
+  background: var(--almost-black-900);
+  line-height: 1.5;
+}
+
+main {
+  background-color: var(--deep-charcoal-800);
+  border-radius: 1.25em;
+  max-width: 23.4rem;
+  min-height: 579px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.container {
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tablet styles at 768px and up */
+@media(min-width: 48em) {
+  .container {
+    max-width: 28.5em;
+    margin: 2.5rem;
+    max-height: 611px;
+  }
+}
+
+/* Desktop styles at 1440px and up */
+@media(min-width: 90em) {
+  .container {
+    max-width: 33em;
+  }
+}
+
+/* ================= Profile Section ================== */
+.profile-img {  
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
+}
+
+.profile-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-img + .profile-info {
+  margin-top: 1.5rem;
+}
+
+.profile-info,
+.profile-description {
+  margin-bottom: 1.5rem;
+}
+
+.profile-info {
+  font-size: .885rem; 
+  text-align: center;
+  font-weight: 600;
+}
+
+.name {
+  font-size: 1.5rem;  
+  margin: 0;
+}
+
+.location {
+  color: var(--lime-green);
+  text-align: center;
+  margin-top: .3em;
+}
+
+.profile-description {
+  text-align: center;
+}
+
+.profile-links {
+  list-style: none;     
+  padding-left: 0;       
+  margin: 0;            
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.profile-links li {
+  display: flex;      
+  align-items: center;  
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* ================= Buttons ================== */
+.btn {
+  padding: 1.25em 2em;
+  background: var(--dark-charcoal-700);
+  text-align: center;
+  font-size: .875rem;
+  font-weight: 700;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transform: scale(1);
+  transition: background 500ms ease, transform 500ms;
+  width: 100%;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--lime-green);
+  transform: scale(1.02);
+  color: var(--almost-black-900);
+}
