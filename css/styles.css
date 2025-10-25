@@ -1,11 +1,17 @@
 /* ================= Global Styles ================== */
 /* Primary color from branding guidelines */
 :root {
-  --lime-green: hsl(75, 94%, 57%);
-  --white: hsl(0, 0%, 100%);
-  --dark-charcoal-700: hsl(0, 0%, 20%);
-  --deep-charcoal-800: hsl(0, 0%, 12%);
-  --almost-black-900: hsl(0, 0%, 8%);
+  /* colors */
+  --clr-light: hsl(0, 0%, 100%);
+  --clr-accent: hsl(75, 94%, 57%);
+  --clr-dark-charcoal: hsl(0, 0%, 20%);
+  --clr-deep-charcoal: hsl(0, 0%, 12%);
+  --clr-almost-blk: hsl(0, 0%, 8%);
+
+  /* font sizes */
+  --fs-body: 1rem;
+  --fs-h1: 1.5rem;
+  --fs-btn:.875rem;
 }
 
 html {
@@ -22,7 +28,7 @@ html, body {
 }
 
 html {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 h1, p {
@@ -30,26 +36,36 @@ h1, p {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  color: var(--white);
-  background: var(--almost-black-900);
+  font-size: var(--fs-body);
+  color: var(--clr-light);
+  background: var(--clr-almost-blk);
   line-height: 1.5;
+  padding: 2rem;
+  display: block;
+  min-height: 100vh;
+}
+
+/* Apply vertical centering for tablet and larger screens */
+@media(min-width: 48em) { 
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
 }
 
 main {
-  background-color: var(--deep-charcoal-800);
+  background-color: var(--clr-deep-charcoal);
   border-radius: 1.25em;
   max-width: 23.4rem;
-  min-height: 579px;
   width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: var(--fs-h1);
 }
 
 .container {
@@ -93,8 +109,8 @@ h1 {
   margin-top: 1.5rem;
 }
 
-.profile-info,
-.profile-description {
+.profile-description, 
+.profile-info {
   margin-bottom: 1.5rem;
 }
 
@@ -105,12 +121,11 @@ h1 {
 }
 
 .name {
-  font-size: 1.5rem;  
   margin: 0;
 }
 
 .location {
-  color: var(--lime-green);
+  color: var(--clr-accent);
   text-align: center;
   margin-top: .3em;
 }
@@ -123,7 +138,6 @@ h1 {
   list-style: none;     
   padding-left: 0;       
   margin: 0;            
-
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -136,15 +150,15 @@ h1 {
 
 a {
   text-decoration: none;
-  color: var(--white);
+  color: var(--clr-light);
 }
 
 /* ================= Buttons ================== */
 .btn {
   padding: 1.25em 2em;
-  background: var(--dark-charcoal-700);
+  background: var(--clr-dark-charcoal);
   text-align: center;
-  font-size: .875rem;
+  font-size: var(--fs-btn);
   font-weight: 700;
   border-radius: 0.3em;
   cursor: pointer;
@@ -153,9 +167,16 @@ a {
   width: 100%;
 }
 
+/* Disable or reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none; /* Turn off transitions to prevent motion */
+  }
+}
+
 .btn:hover,
 .btn:focus {
-  background: var(--lime-green);
+  background: var(--clr-accent);
   transform: scale(1.02);
-  color: var(--almost-black-900);
+  color: var(--clr-almost-blk);
 }
