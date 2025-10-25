@@ -9,8 +9,9 @@
   --clr-almost-blk: hsl(0, 0%, 8%);
 
   /* font sizes */
-  --fs-body: 1rem;
+  --fs-body: .875rem;
   --fs-h1: 1.5rem;
+  --fs-p: .78rem;
   --fs-btn:.875rem;
 }
 
@@ -132,6 +133,15 @@ h1 {
 
 .profile-description {
   text-align: center;
+  font-size: var(--fs-p);
+  font-weight: 400;
+}
+
+@media (min-width: 45em) {
+  .profile-description {
+    white-space: nowrap;
+    font-size: var(--fs-body)
+  }
 }
 
 .profile-links {
